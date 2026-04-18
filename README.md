@@ -291,6 +291,6 @@ DashXDemoNotificationService/
 
 ## Caveats
 
-- **Bundle-ID clash**: `com.dashxdemo.app` is shared with the more feature-rich `dashx-demo-ios` demo, so both can't be installed side-by-side on the same device/simulator.
+- **Bundle-ID clash**: `com.dashxdemo.app` is shared with the more feature-rich `dashxhq/dashx-demo-ios` app, so both can't be installed side-by-side on the same device/simulator.
 - **Simulator push**: use `xcrun simctl push <device> com.dashxdemo.app <payload.apns>` or drag an `.apns` file onto the simulator window. Real FCM round-trips require a physical device with push entitlements provisioned.
 - **Not production-hardened**: this app intentionally skips auth, error recovery strategies, background fetch, scene multi-window support, etc. Use it as a reference, not a template.
