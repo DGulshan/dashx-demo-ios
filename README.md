@@ -256,6 +256,20 @@ Walk through the on-screen buttons in order:
 
 Tap the 🔍 icon in the toolbar to open the Logs sheet. Every SDK call, permission response, FCM token event, and push tap gets an entry there.
 
+### Iterating on the SDK locally
+
+To build this demo against an in-progress checkout of `dashx-ios` at `../../dashx-ios` (instead of the published 1.3.0 tag), flip the SPM reference with:
+
+```bash
+scripts/use-dashx.py local                      # point at ../../dashx-ios on disk
+scripts/use-dashx.py local ../my-fork           # custom relative path
+scripts/use-dashx.py local /abs/path/dashx-ios  # custom absolute path
+scripts/use-dashx.py remote                     # back to pinned 1.3.0 (commit this state)
+scripts/use-dashx.py remote 1.4.0               # pin to a different exact version
+```
+
+The script rewrites the `XC(Local|Remote)SwiftPackageReference` entries in the pbxproj and deletes the stale `Package.resolved` so Xcode re-resolves on next open. `remote` (no version) round-trips byte-identical to the committed state — always flip back before committing.
+
 ---
 
 ## Troubleshooting
