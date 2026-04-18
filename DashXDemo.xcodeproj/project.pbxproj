@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0A0A0A0A0A0A0A0A0A0C001 /* DashXDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B001 /* DashXDemoApp.swift */; };
+		A0A0A0A0A0A0A0A0A0A0C002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B002 /* AppDelegate.swift */; };
+		A0A0A0A0A0A0A0A0A0A0C003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B003 /* ContentView.swift */; };
+		A0A0A0A0A0A0A0A0A0A0C004 /* DemoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B004 /* DemoState.swift */; };
+		A0A0A0A0A0A0A0A0A0A0C005 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B005 /* Logger.swift */; };
+		A0A0A0A0A0A0A0A0A0A0C006 /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B006 /* LogsView.swift */; };
+		A0A0A0A0A0A0A0A0A0A0C007 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B007 /* Configuration.swift */; };
+		A0A0A0A0A0A0A0A0A0A0C020 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B020 /* NotificationService.swift */; };
+		A0A0A0A0A0A0A0A0A0A0C030 /* DashXDemoNotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0A041 /* DashXDemoNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0A0A0A0A0A0A0A0A0A0D001 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B010 /* GoogleService-Info.plist */; };
+		A0A0A0A0A0A0A0A0A0A0D002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B011 /* Assets.xcassets */; };
+		A0A0A0A0A0A0A0A0A0A0D003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A0A0A0A0A0A0A0A0A0B012 /* Preview Assets.xcassets */; };
+		A0A0A0A0A0A0A0A0A0A0E001 /* DashX in Frameworks */ = {isa = PBXBuildFile; productRef = A0A0A0A0A0A0A0A0A0A0F002 /* DashX */; };
+		A0A0A0A0A0A0A0A0A0A0E002 /* DashXFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = A0A0A0A0A0A0A0A0A0A0F003 /* DashXFirebase */; };
+		A0A0A0A0A0A0A0A0A0A0E010 /* DashXNotificationServiceExtension in Frameworks */ = {isa = PBXBuildFile; productRef = A0A0A0A0A0A0A0A0A0A0F010 /* DashXNotificationServiceExtension */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0A0A0A0A0A0A0A0A0A0A070 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0A0A0A0A0A0A0A0A0A0A001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0A0A0A0A0A0A0A0A0A0A040;
+			remoteInfo = DashXDemoNotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0A0A0A0A0A0A0A0A0A0A033 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A0A0A0A0A0A0A0A0A0A0C030 /* DashXDemoNotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A0A0A0A0A0A0A0A0A0A0A011 /* DashXDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DashXDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0A0A0A0A0A0A0A0A0A0A041 /* DashXDemoNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DashXDemoNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0A0A0A0A0A0A0A0A0A0B001 /* DashXDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashXDemoApp.swift; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B004 /* DemoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoState.swift; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B005 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B006 /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B007 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B009 /* DashXDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DashXDemo.entitlements; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B010 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B012 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B020 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		A0A0A0A0A0A0A0A0A0A0B021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0A0A0A0A0A0A0A0A0A0A032 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0A0A0A0A0A0A0A0A0A0E001 /* DashX in Frameworks */,
+				A0A0A0A0A0A0A0A0A0A0E002 /* DashXFirebase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0A0A0A0A0A0A0A0A0A0A052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0A0A0A0A0A0A0A0A0A0E010 /* DashXNotificationServiceExtension in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0A0A0A0A0A0A0A0A0A0A002 = {
+			isa = PBXGroup;
+			children = (
+				A0A0A0A0A0A0A0A0A0A0A003 /* DashXDemo */,
+				A0A0A0A0A0A0A0A0A0A0A007 /* DashXDemoNotificationService */,
+				A0A0A0A0A0A0A0A0A0A0A004 /* Products */,
+				A0A0A0A0A0A0A0A0A0A0A005 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A0A0A0A0A0A0A0A0A0A0A003 /* DashXDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A0A0A0A0A0A0A0A0A0A0B001 /* DashXDemoApp.swift */,
+				A0A0A0A0A0A0A0A0A0A0B002 /* AppDelegate.swift */,
+				A0A0A0A0A0A0A0A0A0A0B003 /* ContentView.swift */,
+				A0A0A0A0A0A0A0A0A0A0B004 /* DemoState.swift */,
+				A0A0A0A0A0A0A0A0A0A0B005 /* Logger.swift */,
+				A0A0A0A0A0A0A0A0A0A0B006 /* LogsView.swift */,
+				A0A0A0A0A0A0A0A0A0A0B007 /* Configuration.swift */,
+				A0A0A0A0A0A0A0A0A0A0B011 /* Assets.xcassets */,
+				A0A0A0A0A0A0A0A0A0A0A006 /* Preview Content */,
+				A0A0A0A0A0A0A0A0A0A0B008 /* Info.plist */,
+				A0A0A0A0A0A0A0A0A0A0B009 /* DashXDemo.entitlements */,
+				A0A0A0A0A0A0A0A0A0A0B010 /* GoogleService-Info.plist */,
+			);
+			path = DashXDemo;
+			sourceTree = "<group>";
+		};
+		A0A0A0A0A0A0A0A0A0A0A004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0A0A0A0A0A0A0A0A0A0A011 /* DashXDemo.app */,
+				A0A0A0A0A0A0A0A0A0A0A041 /* DashXDemoNotificationService.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0A0A0A0A0A0A0A0A0A0A005 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0A0A0A0A0A0A0A0A0A0A006 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A0A0A0A0A0A0A0A0A0A0B012 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0A0A0A0A0A0A0A0A0A0A007 /* DashXDemoNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				A0A0A0A0A0A0A0A0A0A0B020 /* NotificationService.swift */,
+				A0A0A0A0A0A0A0A0A0A0B021 /* Info.plist */,
+			);
+			path = DashXDemoNotificationService;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0A0A0A0A0A0A0A0A0A0A010 /* DashXDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0A0A0A0A0A0A0A0A0A0A020 /* Build configuration list for PBXNativeTarget "DashXDemo" */;
+			buildPhases = (
+				A0A0A0A0A0A0A0A0A0A0A030 /* Sources */,
+				A0A0A0A0A0A0A0A0A0A0A031 /* Resources */,
+				A0A0A0A0A0A0A0A0A0A0A032 /* Frameworks */,
+				A0A0A0A0A0A0A0A0A0A0A033 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0A0A0A0A0A0A0A0A0A0A071 /* PBXTargetDependency */,
+			);
+			name = DashXDemo;
+			packageProductDependencies = (
+				A0A0A0A0A0A0A0A0A0A0F002 /* DashX */,
+				A0A0A0A0A0A0A0A0A0A0F003 /* DashXFirebase */,
+			);
+			productName = DashXDemo;
+			productReference = A0A0A0A0A0A0A0A0A0A0A011 /* DashXDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A0A0A0A0A0A0A0A0A0A0A040 /* DashXDemoNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0A0A0A0A0A0A0A0A0A0A060 /* Build configuration list for PBXNativeTarget "DashXDemoNotificationService" */;
+			buildPhases = (
+				A0A0A0A0A0A0A0A0A0A0A050 /* Sources */,
+				A0A0A0A0A0A0A0A0A0A0A052 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DashXDemoNotificationService;
+			packageProductDependencies = (
+				A0A0A0A0A0A0A0A0A0A0F010 /* DashXNotificationServiceExtension */,
+			);
+			productName = DashXDemoNotificationService;
+			productReference = A0A0A0A0A0A0A0A0A0A0A041 /* DashXDemoNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0A0A0A0A0A0A0A0A0A0A001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A0A0A0A0A0A0A0A0A0A0A010 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A0A0A0A0A0A0A0A0A0A0A040 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A0A0A0A0A0A0A0A0A0A0A021 /* Build configuration list for PBXProject "DashXDemo" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A0A0A0A0A0A0A0A0A0A0A002;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A0A0A0A0A0A0A0A0A0A0F001 /* XCRemoteSwiftPackageReference "dashx-ios" */,
+			);
+			productRefGroup = A0A0A0A0A0A0A0A0A0A0A004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0A0A0A0A0A0A0A0A0A0A010 /* DashXDemo */,
+				A0A0A0A0A0A0A0A0A0A0A040 /* DashXDemoNotificationService */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0A0A0A0A0A0A0A0A0A0A031 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0A0A0A0A0A0A0A0A0A0D003 /* Preview Assets.xcassets in Resources */,
+				A0A0A0A0A0A0A0A0A0A0D002 /* Assets.xcassets in Resources */,
+				A0A0A0A0A0A0A0A0A0A0D001 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0A0A0A0A0A0A0A0A0A0A030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0A0A0A0A0A0A0A0A0A0C001 /* DashXDemoApp.swift in Sources */,
+				A0A0A0A0A0A0A0A0A0A0C002 /* AppDelegate.swift in Sources */,
+				A0A0A0A0A0A0A0A0A0A0C003 /* ContentView.swift in Sources */,
+				A0A0A0A0A0A0A0A0A0A0C004 /* DemoState.swift in Sources */,
+				A0A0A0A0A0A0A0A0A0A0C005 /* Logger.swift in Sources */,
+				A0A0A0A0A0A0A0A0A0A0C006 /* LogsView.swift in Sources */,
+				A0A0A0A0A0A0A0A0A0A0C007 /* Configuration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0A0A0A0A0A0A0A0A0A0A050 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0A0A0A0A0A0A0A0A0A0C020 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0A0A0A0A0A0A0A0A0A0A071 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0A0A0A0A0A0A0A0A0A0A040 /* DashXDemoNotificationService */;
+			targetProxy = A0A0A0A0A0A0A0A0A0A0A070 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A0A0A0A0A0A0A0A0A0A0A022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DashXDemo/DashXDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DashXDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = AS5VW845N7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DashXDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dashxdemo.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A0A0A0A0A0A0A0A0A0A0A023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DashXDemo/DashXDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DashXDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = AS5VW845N7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DashXDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dashxdemo.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A0A0A0A0A0A0A0A0A0A0A024 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A0A0A0A0A0A0A0A0A0A0A025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A0A0A0A0A0A0A0A0A0A0A061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AS5VW845N7;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DashXDemoNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dashxdemo.app.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A0A0A0A0A0A0A0A0A0A0A062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AS5VW845N7;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DashXDemoNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dashxdemo.app.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A0A0A0A0A0A0A0A0A0A0A020 /* Build configuration list for PBXNativeTarget "DashXDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0A0A0A0A0A0A0A0A0A0A022 /* Debug */,
+				A0A0A0A0A0A0A0A0A0A0A023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0A0A0A0A0A0A0A0A0A0A021 /* Build configuration list for PBXProject "DashXDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0A0A0A0A0A0A0A0A0A0A024 /* Debug */,
+				A0A0A0A0A0A0A0A0A0A0A025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0A0A0A0A0A0A0A0A0A0A060 /* Build configuration list for PBXNativeTarget "DashXDemoNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0A0A0A0A0A0A0A0A0A0A061 /* Debug */,
+				A0A0A0A0A0A0A0A0A0A0A062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A0A0A0A0A0A0A0A0A0A0F001 /* XCRemoteSwiftPackageReference "dashx-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dashxhq/dashx-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A0A0A0A0A0A0A0A0A0A0F002 /* DashX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0A0A0A0A0A0A0A0A0A0F001 /* XCRemoteSwiftPackageReference "dashx-ios" */;
+			productName = DashX;
+		};
+		A0A0A0A0A0A0A0A0A0A0F003 /* DashXFirebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0A0A0A0A0A0A0A0A0A0F001 /* XCRemoteSwiftPackageReference "dashx-ios" */;
+			productName = DashXFirebase;
+		};
+		A0A0A0A0A0A0A0A0A0A0F010 /* DashXNotificationServiceExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0A0A0A0A0A0A0A0A0A0F001 /* XCRemoteSwiftPackageReference "dashx-ios" */;
+			productName = DashXNotificationServiceExtension;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A0A0A0A0A0A0A0A0A0A0A001 /* Project object */;
+}
