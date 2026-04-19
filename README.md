@@ -174,7 +174,7 @@ Without an NSE, alert-pushes still display but you lose image attachments, dynam
     ```swift
     import DashXNotificationServiceExtension
 
-    final class NotificationService: DashXNotificationServiceExtension {}
+    final class NotificationService: DashXNotificationService {}
     ```
 
     That one-liner is the entire extension. The SDK base class:
@@ -299,7 +299,7 @@ DashXDemo/
 └── GoogleService-Info.plist      Firebase project config
 
 DashXDemoNotificationService/
-├── NotificationService.swift     final class NotificationService: DashXNotificationServiceExtension {}
+├── NotificationService.swift     final class NotificationService: DashXNotificationService {}
 └── Info.plist                    NSExtension manifest + DASHX_* keys
 ```
 

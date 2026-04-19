@@ -6,7 +6,7 @@ Usage:
     scripts/use-dashx.py local                      # ../../dashx-ios (default)
     scripts/use-dashx.py local ../my-fork           # custom relative path
     scripts/use-dashx.py local /abs/path/dashx-ios  # custom absolute path
-    scripts/use-dashx.py remote                     # pin to 1.3.0 (default)
+    scripts/use-dashx.py remote                     # pin to 1.3.1 (default)
     scripts/use-dashx.py remote 1.4.0               # pin to given exact version
 
 Why: the released remote tag is what integrators should use (and what the
@@ -37,7 +37,7 @@ PACKAGE_RESOLVED = (
 
 REMOTE_URL = "https://github.com/dashxhq/dashx-ios.git"
 DEFAULT_LOCAL_PATH = "../../dashx-ios"
-DEFAULT_VERSION = "1.3.0"
+DEFAULT_VERSION = "1.3.1"
 
 REMOTE_ANNOTATION = 'XCRemoteSwiftPackageReference "dashx-ios"'
 

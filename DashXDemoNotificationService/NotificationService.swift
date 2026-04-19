@@ -1,6 +1,6 @@
 import DashXNotificationServiceExtension
 
-/// Subclasses `DashXNotificationServiceExtension` to opt into DashX 1.3.0+ rich-push
+/// Subclasses `DashXNotificationService` to opt into DashX 1.3.0+ rich-push
 /// handling before iOS displays the banner:
 ///
 /// - Image attachments: downloaded from `dashx.image` and attached to the notification.
@@ -10,4 +10,4 @@ import DashXNotificationServiceExtension
 /// - Delivered tracking: a `trackNotification(event: "delivered")` GraphQL mutation
 ///   fires even when the host app isn't running, provided this target's Info.plist
 ///   carries the same `DASHX_BASE_URI` / `DASHX_PUBLIC_KEY` keys the main app uses.
-final class NotificationService: DashXNotificationServiceExtension {}
+final class NotificationService: DashXNotificationService {}
