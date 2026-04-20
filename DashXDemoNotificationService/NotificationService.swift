@@ -1,6 +1,6 @@
 import DashXNotificationServiceExtension
 
-/// Subclasses `DashXNotificationService` to opt into DashX 1.3.0+ rich-push
+/// Subclasses `DashXNotificationService` to opt into DashX 1.4.0+ rich-push
 /// handling before iOS displays the banner:
 ///
 /// - Image attachments: downloaded from `dashx.image` and attached to the notification.

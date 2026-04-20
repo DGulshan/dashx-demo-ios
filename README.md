@@ -1,6 +1,6 @@
-# DashXDemo — iOS push integration reference (DashX 1.3.0)
+# DashXDemo — iOS push integration reference (DashX 1.4.0)
 
-A minimal SwiftUI app that wires every push-notification surface of the [DashX iOS SDK](https://github.com/dashxhq/dashx-ios) 1.3.0:
+A minimal SwiftUI app that wires every push-notification surface of the [DashX iOS SDK](https://github.com/dashxhq/dashx-ios) 1.4.0:
 
 - APNs token forwarding + FCM token handoff
 - Alert-push rendering (iOS 18.5 safe — no silent-push throttling)
@@ -31,7 +31,7 @@ In Xcode: **File → Add Package Dependencies…** and enter:
 https://github.com/dashxhq/dashx-ios.git
 ```
 
-Pin the version to **Exact Version `1.3.0`**. Add the three products to the targets that need them:
+Pin the version to **Exact Version `1.4.0`**. Add the three products to the targets that need them:
 
 | Product | Target | Why |
 |---|---|---|
@@ -70,7 +70,7 @@ Add these keys to the main app's `Info.plist` (see [`DashXDemo/Info.plist`](./Da
 ```
 
 - The first three keys are read at runtime by `DashX.configure(...)` via the `Configuration` helper (Step 5).
-- `remote-notification` background mode is required so iOS wakes the app to receive silent pushes (even though DashX 1.3.0 uses alert pushes primarily, some orchestration flows still use background wake-ups).
+- `remote-notification` background mode is required so iOS wakes the app to receive silent pushes (even though DashX 1.4.0 uses alert pushes primarily, some orchestration flows still use background wake-ups).
 - `FirebaseAppDelegateProxyEnabled = false` disables Firebase's AppDelegate swizzling — `DashXAppDelegate` handles APNs forwarding explicitly (Step 5), and double-forwarding causes duplicate registrations.
 
 ### Step 4 — add the push entitlement
@@ -243,7 +243,7 @@ cd dashx-demo-ios
 open DashXDemo.xcodeproj
 ```
 
-Pick an **iPhone 17 Simulator** (or any iOS 17+ destination), ⌘R. Xcode resolves the `dashx-ios` 1.3.0 package + transitive Firebase/Apollo deps on first open.
+Pick an **iPhone 17 Simulator** (or any iOS 17+ destination), ⌘R. Xcode resolves the `dashx-ios` 1.4.0 package + transitive Firebase/Apollo deps on first open.
 
 Walk through the on-screen buttons in order:
 
@@ -258,13 +258,13 @@ Tap the 🔍 icon in the toolbar to open the Logs sheet. Every SDK call, permiss
 
 ### Iterating on the SDK locally
 
-To build this demo against an in-progress checkout of `dashx-ios` at `../../dashx-ios` (instead of the published 1.3.0 tag), flip the SPM reference with:
+To build this demo against an in-progress checkout of `dashx-ios` at `../../dashx-ios` (instead of the published 1.4.0 tag), flip the SPM reference with:
 
 ```bash
 scripts/use-dashx.py local                      # point at ../../dashx-ios on disk
 scripts/use-dashx.py local ../my-fork           # custom relative path
 scripts/use-dashx.py local /abs/path/dashx-ios  # custom absolute path
-scripts/use-dashx.py remote                     # back to pinned 1.3.0 (commit this state)
+scripts/use-dashx.py remote                     # back to pinned 1.4.0 (commit this state)
 scripts/use-dashx.py remote 1.4.0               # pin to a different exact version
 ```
 
@@ -274,10 +274,10 @@ The script rewrites the `XC(Local|Remote)SwiftPackageReference` entries in the p
 
 ## Troubleshooting
 
-- **Build fails to resolve `dashx-ios`** — ensure the package URL is correct and you pinned *exact* version `1.3.0`. If Xcode is caching an older resolution, *File → Packages → Reset Package Caches*.
+- **Build fails to resolve `dashx-ios`** — ensure the package URL is correct and you pinned *exact* version `1.4.0`. If Xcode is caching an older resolution, *File → Packages → Reset Package Caches*.
 - **Subscribe succeeds but no push arrives** — open Logs and look for `FCM token received (len=...)`. If that entry is missing, Firebase never got a token (most commonly on iOS Simulator — push requires a real device).
 - **Foreground banner doesn't play a sound** — make sure you overrode `notificationDeliveredInForeground` to return `[.banner, .list, .sound, .badge]` (Step 5). Default is `[]`.
-- **Images on banner missing on real device** — check that the NSE target was embedded. Run `ls <app.app>/PlugIns/` on the installed bundle; you should see `*NotificationService.appex`. Also confirm `aps.mutable-content: 1` is in the inbound payload (DashX backend sets this automatically for 1.3.0+ contacts).
+- **Images on banner missing on real device** — check that the NSE target was embedded. Run `ls <app.app>/PlugIns/` on the installed bundle; you should see `*NotificationService.appex`. Also confirm `aps.mutable-content: 1` is in the inbound payload (DashX backend sets this automatically for 1.4.0+ contacts).
 - **Action buttons don't appear** — the NSE must succeed at registering the category before iOS renders the banner. If you see the banner but no buttons, it's the 2-second semaphore timeout inside the NSE — check Console.app filtered to your NSE process.
 
 ---
