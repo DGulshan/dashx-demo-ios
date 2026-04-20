@@ -6,8 +6,8 @@ Usage:
     scripts/use-dashx.py local                      # ../../dashx-ios (default)
     scripts/use-dashx.py local ../my-fork           # custom relative path
     scripts/use-dashx.py local /abs/path/dashx-ios  # custom absolute path
-    scripts/use-dashx.py remote                     # pin to 1.3.1 (default)
-    scripts/use-dashx.py remote 1.4.0               # pin to given exact version
+    scripts/use-dashx.py remote                     # pin to 1.4.0 (default)
+    scripts/use-dashx.py remote 1.4.1               # pin to given exact version
 
 Why: the released remote tag is what integrators should use (and what the
 repo's pbxproj is committed with). When iterating on the SDK source in a
@@ -37,7 +37,7 @@ PACKAGE_RESOLVED = (
 
 REMOTE_URL = "https://github.com/dashxhq/dashx-ios.git"
 DEFAULT_LOCAL_PATH = "../../dashx-ios"
-DEFAULT_VERSION = "1.3.1"
+DEFAULT_VERSION = "1.4.0"
 
 REMOTE_ANNOTATION = 'XCRemoteSwiftPackageReference "dashx-ios"'
 

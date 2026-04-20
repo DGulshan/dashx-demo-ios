@@ -243,7 +243,7 @@ cd dashx-demo-ios
 open DashXDemo.xcodeproj
 ```
 
-Pick an **iPhone 17 Simulator** (or any iOS 17+ destination), ⌘R. Xcode resolves the `dashx-ios` 1.4.0 package + transitive Firebase/Apollo deps on first open.
+Pick an **iPhone 17 Simulator** (or any iOS 17+ destination), ⌘R. Xcode resolves the `dashx-ios` 1.4.0 package + its `FirebaseMessaging` dependency on first open. Starting with 1.4.0, DashX ships as a binary XCFramework with Apollo statically baked in — Apollo no longer appears in the consumer SPM graph.
 
 Walk through the on-screen buttons in order:
 
