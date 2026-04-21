@@ -8,7 +8,6 @@ struct ContentView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    configureSection
                     uidSection
                     identitySection
                     subscribeSection
@@ -35,15 +34,9 @@ struct ContentView: View {
     }
 
     // MARK: - Sections
-
-    private var configureSection: some View {
-        ButtonBlock(
-            title: "Configure DashX",
-            enabled: true,
-            error: state.configureError,
-            action: state.doConfigure
-        )
-    }
+    //
+    // `DashX.configure(...)` runs once from `AppDelegate.didFinishLaunching`, so
+    // there is no Configure button — the UI mounts against a ready SDK.
 
     private var uidSection: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -52,12 +45,11 @@ struct ContentView: View {
                 .textFieldStyle(.roundedBorder)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
-                .disabled(!state.isConfigured)
         }
     }
 
     private var identitySection: some View {
-        let enabled = state.isConfigured && !state.uid.isEmpty
+        let enabled = !state.uid.isEmpty
         return VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 12) {
                 actionButton(
@@ -170,29 +162,6 @@ struct ContentView: View {
 }
 
 // MARK: - Reusable pieces
-
-private struct ButtonBlock: View {
-    let title: String
-    let enabled: Bool
-    let error: String?
-    let action: () -> Void
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Button(action: action) {
-                Text(title)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 6)
-            }
-            .buttonStyle(.borderedProminent)
-            .disabled(!enabled)
-
-            if let error {
-                ErrorText(prefix: "error", message: error)
-            }
-        }
-    }
-}
 
 private struct ErrorText: View {
     let prefix: String

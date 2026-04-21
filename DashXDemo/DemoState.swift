@@ -10,46 +10,18 @@ import UserNotifications
 final class DemoState: ObservableObject {
     @Published var uid: String = ""
 
-    @Published var isConfigured: Bool = false
     @Published var isIdentitySet: Bool = false
     @Published var isIdentified: Bool = false
     @Published var isSubscribed: Bool = false
 
-    @Published var configureError: String?
     @Published var identitySetError: String?
     @Published var identifyError: String?
     @Published var subscribeError: String?
     @Published var unsubscribeError: String?
 
-    // MARK: - Configure
-
-    func doConfigure() {
-        DemoLog.shared.log(.info, "Configure pressed")
-        configureError = nil
-
-        do {
-            let publicKey: String = try Configuration.value(for: "DASHX_PUBLIC_KEY")
-            let baseURI: String? = try? Configuration.value(for: "DASHX_BASE_URI")
-            let targetEnv: String? = try? Configuration.value(for: "DASHX_TARGET_ENVIRONMENT")
-
-            DemoLog.shared.log(
-                .info,
-                "Calling DashX.configure(publicKey: \(redact(publicKey)), baseURI: \(baseURI ?? "nil"), targetEnv: \(targetEnv ?? "nil"))"
-            )
-
-            DashX.configure(
-                withPublicKey: publicKey,
-                baseURI: baseURI,
-                targetEnvironment: targetEnv
-            )
-
-            isConfigured = true
-            DemoLog.shared.log(.info, "configure → success")
-        } catch {
-            configureError = error.localizedDescription
-            DemoLog.shared.log(.error, "configure → \(error.localizedDescription)")
-        }
-    }
+    // Note: `DashX.configure(...)` runs once from `AppDelegate.didFinishLaunching` —
+    // the demo no longer exposes a "Configure" button. All the state below assumes
+    // the SDK is configured by the time the UI mounts.
 
     // MARK: - Set Identity
 
@@ -127,26 +99,20 @@ final class DemoState: ObservableObject {
 
         DashX.reset()
 
+        // Deliberately NOT clearing any `configured` flag — `DashX.reset()` only
+        // clears identity + FCM state; the SDK stays configured with the keys
+        // already loaded at `AppDelegate.didFinishLaunching` time.
         uid = ""
-        isConfigured = false
         isIdentitySet = false
         isIdentified = false
         isSubscribed = false
 
-        configureError = nil
         identitySetError = nil
         identifyError = nil
         subscribeError = nil
         unsubscribeError = nil
 
         DemoLog.shared.log(.info, "reset → all local state cleared")
-    }
-
-    // MARK: - Helpers
-
-    private func redact(_ key: String) -> String {
-        guard key.count > 6 else { return "***" }
-        return "\(key.prefix(4))…\(key.suffix(2))"
     }
 }
 

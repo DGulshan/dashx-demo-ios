@@ -7,13 +7,8 @@ import UserNotifications
 
 /// Subclass of `DashXAppDelegate` to get DashX's notification delivery/click/dismiss
 /// tracking for free. Adds Firebase + MessagingDelegate wiring so the FCM token can
-/// be forwarded into the DashX client when it arrives.
-///
-/// We deliberately do **not** call `DashX.configure(...)` here — the demo's point is
-/// to exercise each SDK call via a visible button in `ContentView`, so configure
-/// fires from a user tap, not app launch. Firebase itself must still be configured
-/// at launch because `FirebaseApp.configure()` has to run before any Firebase API
-/// is touched.
+/// be forwarded into the DashX client when it arrives, and configures DashX at
+/// launch so the SDK is usable from the moment the UI comes up.
 class AppDelegate: DashXAppDelegate, MessagingDelegate {
     func application(
         _ application: UIApplication,
@@ -27,7 +22,31 @@ class AppDelegate: DashXAppDelegate, MessagingDelegate {
 
         DemoLog.shared.log(.info, "AppDelegate.didFinishLaunching — Firebase configured")
 
+        Self.configureDashX()
+
         return true
+    }
+
+    /// Reads `DASHX_*` Info.plist keys via the `Configuration` helper and calls
+    /// `DashX.configure` on main. Done in `didFinishLaunching` rather than from
+    /// a button tap because that's the production-shaped integration — you
+    /// want the SDK ready for `userNotificationCenter(_:didReceive:)` callbacks
+    /// on cold-launch notification taps.
+    private static func configureDashX() {
+        do {
+            let publicKey: String = try Configuration.value(for: "DASHX_PUBLIC_KEY")
+            let baseURI: String? = try? Configuration.value(for: "DASHX_BASE_URI")
+            let targetEnv: String? = try? Configuration.value(for: "DASHX_TARGET_ENVIRONMENT")
+
+            DashX.configure(
+                withPublicKey: publicKey,
+                baseURI: baseURI,
+                targetEnvironment: targetEnv
+            )
+            DemoLog.shared.log(.info, "DashX.configure() called from didFinishLaunching")
+        } catch {
+            DemoLog.shared.log(.error, "DashX.configure failed — \(error)")
+        }
     }
 
     // MARK: - Foreground notification presentation

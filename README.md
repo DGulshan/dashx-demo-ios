@@ -106,8 +106,9 @@ class AppDelegate: DashXAppDelegate, MessagingDelegate {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
 
-        // DashX.configure() can go here, or — as in this demo — get called later
-        // from a user action if you want to gate initialization on consent.
+        // `DashX.configure(...)` runs here — as in this demo's
+        // `AppDelegate.configureDashX()` — so the SDK is ready before iOS
+        // delivers any notification-tap callbacks on cold launch.
 
         return true
     }
@@ -205,7 +206,7 @@ Without an NSE, alert-pushes still display but you lose image attachments, dynam
 
 ### Step 8 — the DashX lifecycle calls
 
-Call these from your own UI / app logic. This demo routes each through a dedicated button so you can see each step independently; in production you'd typically call `configure` at launch, `setIdentity` + `identify` after login, and `subscribe` when the user grants push permission.
+Call these from your own UI / app logic. This demo calls `configure` once at launch (same as a typical production app) and routes the rest through dedicated buttons so you can see each step independently — `setIdentity` + `identify` after a mock login, `subscribe` when the user grants push permission.
 
 ```swift
 import DashX
@@ -243,16 +244,15 @@ cd dashx-demo-ios
 open DashXDemo.xcodeproj
 ```
 
-Pick an **iPhone 17 Simulator** (or any iOS 17+ destination), ⌘R. Xcode resolves the `dashx-ios` 1.4.0 package + its `FirebaseMessaging` dependency on first open. Starting with 1.4.0, DashX ships as a binary XCFramework with Apollo statically baked in — Apollo no longer appears in the consumer SPM graph.
+Pick an **iPhone 17 Simulator** (or any iOS 17+ destination), ⌘R. Xcode resolves the `dashx-ios` 1.4.1 package + its `FirebaseMessaging` dependency on first open. Starting with 1.4.0, DashX ships as a binary XCFramework with Apollo statically baked in — Apollo no longer appears in the consumer SPM graph.
 
-Walk through the on-screen buttons in order:
+`DashX.configure(...)` runs once from `AppDelegate.didFinishLaunching` (see `AppDelegate.configureDashX()`), so the SDK is ready the moment the UI mounts. The on-screen flow picks up from there:
 
-1. **Configure DashX** — reads the three DASHX keys from `Info.plist` and calls `DashX.configure(...)`.
-2. **User UID** input — enabled after Configure.
-3. **Set DashX Identity** → **Identify Account** — unlocks Subscribe.
-4. **Subscribe to Notifications** — permission prompt + `DashX.subscribe()`. FCM token gets forwarded into the SDK by `messaging(_:didReceiveRegistrationToken:)`.
-5. Send a test broadcast from the DashX dashboard → banner appears (even in foreground, with sound), and tapping it fires `handleLink`.
-6. **Unsubscribe** → **Reset** — returns to initial state.
+1. **User UID** input — type any identifier.
+2. **Set DashX Identity** → **Identify Account** — unlocks Subscribe.
+3. **Subscribe to Notifications** — permission prompt + `DashX.subscribe()`. FCM token gets forwarded into the SDK by `messaging(_:didReceiveRegistrationToken:)`.
+4. Send a test broadcast from the DashX dashboard → banner appears (even in foreground, with sound), and tapping it fires `handleLink`.
+5. **Unsubscribe** → **Reset** — returns to initial state (keeps DashX configured; only identity/subscription are cleared).
 
 Tap the 🔍 icon in the toolbar to open the Logs sheet. Every SDK call, permission response, FCM token event, and push tap gets an entry there.
 
